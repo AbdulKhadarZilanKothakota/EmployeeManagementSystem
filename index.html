@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Abdul Khadar Zilan">
+
+    <title>
+        Employee Management System
+    </title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <h1>
+            Employee Management System
+        </h1>
+
+        <div class="date-time">
+            <span id="today">Today: </span>
+            <strong id="time">Time: </strong>
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+
+        <!-- SALARY DASHBOARD -->
+
+        <section class="salary-dashboard">
+
+            <div class="dashboard-title">
+                Salary Dashboard
+            </div>
+
+            <div class="dashboard-cards">
+
+                <div class="dashboard-card employee-dashboard">
+
+                    <p> Total Employees </p>
+
+                    <h3 id="dashboardEmployeeCount"> 0</h3>
+
+                    <span> Employees </span>
+
+                </div>
+
+
+                <div class="dashboard-card salary-dashboard-card">
+
+                    <p> Total Salary </p>
+
+                    <h3 id="totalSalary"> ₹0 </h3>
+
+                    <span> Monthly Salary </span>
+
+                </div>
+
+
+
+                <div class="dashboard-card average-dashboard">
+
+                    <p> Average Salary </p>
+
+                    <h3 id="averageSalary"> ₹0 </h3>
+
+                    <span> Per Employee </span>
+
+                </div>
+
+
+
+                <div class="dashboard-card highest-dashboard">
+
+                    <p> Highest Salaried Employee </p>
+
+                    <h3 id="highestSalary"> ₹0 </h3>
+
+                    <span id="highestEmployeeName">
+                        No Employee
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!--  SEARCH & FILTER -->
+
+        <section class="search-section">
+
+
+            <div class="search-top">
+
+                <h2> Search & Filter </h2>
+
+
+                <div class="search-right">
+
+                    <div class="count-box">
+
+                        <strong id="employeeCount">
+                            0
+                        </strong>
+
+                        <span>
+                            Employees
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SEARCH -->
+
+            <div class="search-area">
+
+                <input
+                    type="text"
+                    id="searching"
+                    placeholder="Search employee by name...">
+
+                <button id="searchBtn">
+                    Search
+                </button>
+
+            </div>
+
+
+
+            <!-- DEPARTMENT -->
+
+            <div class="department-area">
+
+                <span class="department-label">
+                    Department
+                </span>
+
+
+                <div class="filter-buttons">
+
+                    <button
+                        class="filter-btn active"
+                        data-department="All">
+                        All
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-department="IT">
+                        IT
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-department="Engineering">
+                        Engineering
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-department="Support">
+                        Support
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-department="Product Management">
+                        Product Management
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-department="Human Resources">
+                        Human Resources
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-department="Marketing">
+                        Marketing
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-department="Sales">
+                        Sales
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- MESSAGE  -->
+
+        <div
+            id="message"
+            class="message">
+        </div>
+
+
+        <!--  EMPLOYEE DETAILS  -->
+
+        <div class="employee-heading">
+
+            <h2> Employees Details </h2>
+
+            <div class="sort-area">
+
+                <label for="sortSelect">
+                    Sort By
+                </label>
+
+                <select id="sortSelect">
+
+                    <option value="default">
+                        Default
+                    </option>
+
+                    <option value="name">
+                        Name
+                    </option>
+
+                    <option value="age">
+                        Age
+                    </option>
+
+                    <option value="salary">
+                        Salary
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- EMPLOYEE CARDS -->
+
+        <section class="employees-section">
+
+            <div
+                id="employeeContainer"
+                class="employee-container">
+            </div>
+
+        </section>
+
+
+
+        <!--  ADD EMPLOYEE -->
+
+        <section class="add-section">
+
+
+            <div class="add-heading">
+
+                <h2> Add Employee </h2>
+
+                <p> Enter employee information </p>
+
+            </div>
+
+
+            <form id="employeeForm">
+
+
+                <!-- NAME -->
+
+                <div class="input-group">
+
+                    <label for="name">
+                        Employee Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter employee name">
+
+                    <small id="nameError"></small>
+
+                </div>
+
+
+
+                <!-- AGE -->
+
+                <div class="input-group">
+
+                    <label for="age">
+                        Age
+                    </label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        placeholder="Enter employee age">
+
+                    <small id="ageError"></small>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter employee email">
+
+                    <small id="emailError"></small>
+
+                </div>
+
+
+
+                <!-- DEPARTMENT -->
+
+                <div class="input-group">
+
+                    <label for="department">
+                        Department
+                    </label>
+
+                    <select id="department">
+
+                        <option value="">
+                            Select Department
+                        </option>
+
+                        <option value="IT">
+                            IT
+                        </option>
+
+                        <option value="Engineering">
+                            Engineering
+                        </option>
+
+                        <option value="Support">
+                            Support
+                        </option>
+
+                        <option value="Product Management">
+                            Product Management
+                        </option>
+
+                        <option value="Human Resources">
+                            Human Resources
+                        </option>
+
+                        <option value="Marketing">
+                            Marketing
+                        </option>
+
+                        <option value="Sales">
+                            Sales
+                        </option>
+
+                    </select>
+
+                    <small id="departmentError"></small>
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="add-button">
+
+                     Add Employee
+
+                </button>
+
+
+            </form>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <footer>
+
+        Employee Management System <br>
+        © 2026 Abdul Khadar Zilan. All Rights Reserved.
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

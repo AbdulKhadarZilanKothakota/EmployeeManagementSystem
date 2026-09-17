@@ -1,0 +1,816 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(244, 247, 251);
+    color: rgb(23, 32, 51);
+}
+
+
+/* ----- HEADER ----- */
+
+.header {
+    height: 95px;
+    padding: 0 6%;
+    background: linear-gradient(
+        135deg,
+        rgb(18, 61, 145),
+        rgb(23, 105, 210)
+    );
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.header h1 {
+    font-size: 30px;
+}
+
+
+.date-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+
+.date-time span {
+    font-size: 13px;
+    color: rgb(220, 234, 255);
+}
+
+
+.date-time strong {
+    font-size: 17px;
+}
+
+
+/* ----- MAIN ----- */
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 18px auto;
+}
+
+
+/* ----- SALARY DASHBOARD ----- */
+
+.salary-dashboard {
+    background: white;
+    padding: 17px 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+
+    box-shadow:
+        0 4px 18px
+        rgba(30, 55, 90, 0.07);
+}
+
+
+.dashboard-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+    gap: 12px;
+}
+
+
+.dashboard-card {
+    min-height: 105px;
+    padding: 15px;
+    border-radius: 9px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.dashboard-card p {
+    font-size: 11px;
+    color: rgb(102, 117, 138);
+    margin-bottom: 6px;
+}
+
+
+.dashboard-card h3 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 4px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.dashboard-card span {
+    font-size: 10px;
+    color: rgb(123, 135, 152);
+}
+
+
+.employee-dashboard {
+    background: rgb(237, 244, 255);
+}
+
+
+.employee-dashboard h3 {
+    color: rgb(23, 105, 210);
+}
+
+
+.salary-dashboard-card {
+    background: rgb(236, 250, 243);
+}
+
+
+.salary-dashboard-card h3 {
+    color: rgb(21, 148, 91);
+}
+
+
+.average-dashboard {
+    background: rgb(255, 247, 232);
+}
+
+
+.average-dashboard h3 {
+    color: rgb(226, 139, 8);
+}
+
+
+.highest-dashboard {
+    background: rgb(243, 239, 255);
+}
+
+
+.highest-dashboard h3 {
+    color: rgb(113, 72, 198);
+    font-size: 25px;
+}
+
+
+.highest-dashboard span {
+    color: rgb(93, 76, 131);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* ----- SEARCH & FILTER ----- */
+
+.search-section {
+    background: white;
+    padding: 11px 20px;
+    border-radius: 12px;
+    margin-bottom: 5px;
+
+    box-shadow:
+        0 4px 18px
+        rgba(30, 55, 90, 0.07);
+}
+
+
+.search-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+
+.search-top h2 {
+    font-size: 19px;
+}
+
+
+.search-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* COUNT */
+
+.count-box {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    background: rgb(237, 244, 255);
+    padding: 5px 12px;
+    border-radius: 7px;
+}
+
+
+.count-box strong {
+    font-size: 21px;
+    color: rgb(23, 105, 210);
+}
+
+
+.count-box span {
+    font-size: 11px;
+    color: rgb(100, 116, 139);
+}
+
+
+/* ----- SEARCH ----- */
+
+.search-area {
+    display: flex;
+    gap: 8px;
+}
+
+
+.search-area input {
+    flex: 1;
+    height: 36px;
+
+    border: 1px solid rgb(214, 223, 235);
+    border-radius: 7px;
+
+    padding: 0 13px;
+    font-size: 14px;
+    outline: none;
+}
+
+
+.search-area input:focus {
+    border-color: rgb(23, 105, 210);
+
+    box-shadow:
+        0 0 0 2px rgb(232, 241, 255);
+}
+
+
+.search-area button {
+    width: 95px;
+    height: 36px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: rgb(23, 105, 210);
+    color: white;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.search-area button:hover {
+    background: rgb(15, 85, 181);
+}
+
+
+/* ----- DEPARTMENT ----- */
+
+.department-area {
+    margin-top: 8px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+
+.department-label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+
+.filter-btn {
+    height: 27px;
+    padding: 0 10px;
+
+    border: 1px solid rgb(216, 224, 235);
+    border-radius: 6px;
+
+    background: rgb(248, 250, 252);
+    color: rgb(71, 85, 105);
+
+    font-size: 11px;
+    cursor: pointer;
+}
+
+
+.filter-btn:hover {
+    border-color: rgb(23, 105, 210);
+    color: rgb(23, 105, 210);
+}
+
+
+.filter-btn.active {
+    background: rgb(23, 105, 210);
+    color: white;
+    border-color: rgb(23, 105, 210);
+}
+
+
+/* ----- SORT ----- */
+
+.sort-area {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+.sort-area label {
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+
+.sort-area select {
+    width: 110px;
+    height: 30px;
+
+    border: 1px solid rgb(216, 224, 235);
+    border-radius: 6px;
+
+    padding: 0 7px;
+    background: white;
+
+    font-size: 11px;
+    outline: none;
+}
+
+
+/* ----- MESSAGE ----- */
+
+.message {
+    min-height: 25px;
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    margin-bottom: 5px;
+    padding-top: 3px;
+}
+
+
+.message-success {
+    color: rgb(21, 148, 91);
+}
+
+
+.message-delete {
+    color: rgb(220, 53, 69);
+}
+
+
+/* ----- EMPLOYEE HEADING ----- */
+
+.employee-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin: 5px 0 12px 2px;
+}
+
+
+.employee-heading h2 {
+    font-size: 20px;
+}
+
+
+.employee-heading span {
+    font-size: 12px;
+    color: rgb(123, 135, 152);
+}
+
+
+/* ----- EMPLOYEE SECTION ----- */
+
+.employees-section {
+    margin-bottom: 15px;
+}
+
+
+.employee-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    grid-auto-rows: 1fr;
+
+    gap: 15px;
+    align-items: stretch;
+}
+
+
+/* ----- EMPLOYEE CARD ----- */
+
+.card {
+    background: white;
+
+    border: 1px solid rgb(225, 231, 239);
+    border-radius: 11px;
+
+    padding: 15px;
+
+    position: relative;
+    z-index: 1;
+
+    height: 100%;
+    min-height: 190px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.card:hover {
+    transform:
+        scale(1.35)
+        translateY(-10px);
+
+    box-shadow:
+        0 25px 55px
+        rgba(10, 40, 90, 0.28);
+
+    z-index: 100;
+}
+
+
+/* CARD TOP */
+
+.card-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+
+.card img {
+    width: 55px;
+    height: 55px;
+
+    object-fit: cover;
+    border-radius: 50%;
+
+    border: 2px solid rgb(232, 240, 255);
+    flex-shrink: 0;
+}
+
+
+.card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+
+.department {
+    display: inline-block;
+
+    padding: 4px 7px;
+
+    background: rgb(237, 244, 255);
+    color: rgb(23, 105, 210);
+
+    border-radius: 5px;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+/* CARD DETAILS */
+
+.card-details {
+    border-top: 1px solid rgb(237, 240, 245);
+    padding-top: 9px;
+}
+
+
+.card-details p {
+    font-size: 11px;
+    color: rgb(102, 117, 138);
+
+    margin: 6px 0;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.card-details strong {
+    color: rgb(38, 52, 76);
+}
+
+
+/* ----- CARD BUTTONS ----- */
+
+.card-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 7px;
+
+    margin-top: 12px;
+}
+
+
+.editBtn,
+.deleteBtn {
+    padding: 6px 10px;
+
+    border: none;
+    border-radius: 5px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* EDIT */
+
+.editBtn {
+    background: rgb(237, 244, 255);
+    color: rgb(23, 105, 210);
+}
+
+
+.editBtn:hover {
+    background: rgb(23, 105, 210);
+    color: white;
+}
+
+
+/* DELETE */
+
+.deleteBtn {
+    background: rgb(255, 240, 240);
+    color: rgb(220, 53, 69);
+}
+
+
+.deleteBtn:hover {
+    background: rgb(220, 53, 69);
+    color: white;
+}
+
+
+/* ---- ADD EMPLOYEE ---- */
+
+.add-section {
+    background: white;
+
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+
+    box-shadow:
+        0 4px 18px
+        rgba(30, 55, 90, 0.07);
+}
+
+
+.add-heading {
+    margin-bottom: 18px;
+}
+
+
+.add-heading h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+
+.add-heading p {
+    color: rgb(123, 135, 152);
+    font-size: 12px;
+}
+
+
+.input-group {
+    width: 100%;
+    margin-bottom: 14px;
+}
+
+
+.input-group label {
+    display: block;
+
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(52, 64, 84);
+
+    margin-bottom: 6px;
+}
+
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    height: 43px;
+
+    border: 1px solid rgb(214, 223, 235);
+    border-radius: 7px;
+
+    padding: 0 12px;
+
+    font-size: 14px;
+    outline: none;
+
+    background: white;
+}
+
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: rgb(23, 105, 210);
+
+    box-shadow:
+        0 0 0 2px rgb(232, 241, 255);
+}
+
+
+.input-group small {
+    display: block;
+
+    min-height: 14px;
+    margin-top: 3px;
+
+    font-size: 10px;
+    color: rgb(220, 53, 69);
+}
+
+
+.add-button {
+    width: 100%;
+    height: 44px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: rgb(23, 105, 210);
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.add-button:hover {
+    background: rgb(15, 85, 181);
+}
+
+
+/* ----- FOOTER ----- */
+
+footer {
+    text-align: center;
+
+    padding: 8px;
+
+    color: rgb(135, 147, 166);
+    font-size: 11px;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+    .employee-container {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .dashboard-cards {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .card:hover {
+        transform:
+            scale(1.18)
+            translateY(-8px);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .header {
+        height: auto;
+        min-height: 90px;
+
+        padding: 18px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+
+    .date-time {
+        align-items: flex-start;
+    }
+
+
+    .container {
+        width: 94%;
+        margin-top: 12px;
+    }
+
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    .employee-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .search-top {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+
+    .search-right {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+
+    .search-area {
+        flex-direction: column;
+    }
+
+
+    .search-area button {
+        width: 100%;
+    }
+
+
+    .card:hover {
+        transform:
+            scale(1.08)
+            translateY(-5px);
+    }
+
+
+    .employee-heading {
+        flex-direction: row;
+        align-items: center;
+        gap: 3px;
+    }
+
+}
