@@ -725,39 +725,39 @@ function calculateSalary(users) {
 
 /* ----- HIGHEST SALARY ----- */
 
-function displayHighestSalary(users) {
+    function displayHighestSalary(users) {
 
     const highest =
-        users.reduce(
-            (max, employee) => {
-
-                return Number(employee.salary) >
-                    Number(max.salary)
-                    ? employee
-                    : max;
-
-            }
+        Math.max(
+            ...users.map(
+                employee => Number(employee.salary)
+            )
         );
 
-    let name;
+    const highestEmployees =
+        users.filter(
+            employee =>
+                Number(employee.salary) === highest
+        );
 
-    if (highest.firstName) {
+    const names =
+        highestEmployees.map(employee => {
 
-        name =
-            `${highest.firstName} ${highest.lastName}`;
+            if (employee.firstName) {
 
-    }
+                return `${employee.firstName} ${employee.lastName}`;
 
-    else {
+            }
 
-        name = highest.name;
+            return employee.name;
 
-    }
+        });
 
     highestSalary.innerText =
-        `₹${Number(highest.salary).toLocaleString("en-IN")}`;
+        `₹${highest.toLocaleString("en-IN")}`;
 
-    highestEmployeeName.innerText = name;
+    highestEmployeeName.innerHTML =
+        names.join("<br>");
 
 }
 
